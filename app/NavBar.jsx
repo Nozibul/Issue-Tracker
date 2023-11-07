@@ -25,7 +25,7 @@ const NavBar = () => {
               <BiSolidBugAlt />
             </Link>
             {/* Navbar links */}
-            {/* <NavLinks /> */}
+            <NavLinks />
           </Flex>
           {/* authentication */}
           {/* <AuthStatus /> */}
@@ -35,50 +35,50 @@ const NavBar = () => {
   );
 };
 
-// // Navbar links
-// const NavLinks = () => {
-//   const currentPath = usePathname();
+// Navbar links
+const NavLinks = () => {
+  const currentPath = usePathname();
 
-//   const links = [
-//     { label: "Dashboard", href: "/" },
-//     { label: "Issues", href: "/issues/list" },
-//     { label: "Contact", href: "/contact" },
-//   ];
+  const links = [
+    { label: "Dashboard", href: "/" },
+    { label: "Issues", href: "/issues/list" },
+    { label: "Contact", href: "/contact" },
+  ];
 
-//   return (
-//     <ul className="flex space-x-2">
-//       {links?.map((link) => (
-//         <li key={link.href} className="flex items-center">
-//           <Link
-//             className={classNames({
-//               "!text-emerald-900 font-semibold": link.href === currentPath,
-//               "nav-link":true
-//             })}
-//             href={link.href}
-//           >
-//             {link.label}
-//           </Link>
-//           {link.href !== "/contact" && (
-//             <svg
-//               className="w-4 h-6 current-fill ml-2"
-//               xmlns="http://www.w3.org/2000/svg"
-//               fill="none"
-//               viewBox="0 0 24 24"
-//               stroke="#ad9e9e"
-//             >
-//               <path
-//                 strokeLinecap="round"
-//                 strokeLinejoin="round"
-//                 strokeWidth={2}
-//                 d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"
-//               />
-//             </svg>
-//           )}
-//         </li>
-//       ))}
-//     </ul>
-//   );
-// };
+  return (
+    <ul className="flex space-x-2">
+      {links?.map((link) => (
+        <li key={link.href} className="flex items-center">
+          <Link
+            className={classNames({
+              "!text-emerald-900 font-semibold": link.href === currentPath,
+              "nav-link":true
+            })}
+            href={link.href}
+          >
+            {link.label}
+          </Link>
+          {link.href !== "/contact" && (
+            <svg
+              className="w-4 h-6 current-fill ml-2"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="#ad9e9e"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"
+              />
+            </svg>
+          )}
+        </li>
+      ))}
+    </ul>
+  );
+};
 
 // authentication
 // const AuthStatus = () => {
