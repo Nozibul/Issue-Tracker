@@ -8,7 +8,7 @@ const IssueForm = dynamic(
   ()=> import('@/app/issues/components/IssueForm'),
   {
     ssr: false,
-    loading: ()=> <IssueFormLoading />
+    loading: ()=> <IssueFormLoading />,
   }
 );
 
