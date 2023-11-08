@@ -17,4 +17,4 @@ const IssueStatus = ({status}) => {
   )
 }
 
-export default IssueStatus
+export default IssueStatus;
