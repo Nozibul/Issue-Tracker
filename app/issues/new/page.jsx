@@ -7,7 +7,7 @@ const IssueForm = dynamic(
     ssr: false ,
     loading: ()=> <IssueFormLoading />
   }
-)
+);
 
 const NewIssuePage = async () => {
   return (
