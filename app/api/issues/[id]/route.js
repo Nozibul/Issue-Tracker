@@ -42,26 +42,26 @@ export async function PATCH(request, { params }) {
 }
 
 // Delete the Issue
-// export async function DELETE(request, { params }) {
-//   const session = await getServerSession(authOptions);
-//   if (!session) return NextResponse.json({}, { status: 401 });
+export async function DELETE(request, { params }) {
+  // const session = await getServerSession(authOptions);
+  // if (!session) return NextResponse.json({}, { status: 401 });
 
-//   try {
-//     // find the unique id
-//     const issueId = await prisma.issue.findUnique({
-//       where: { id: parseInt(params.id) },
-//     });
+  try {
+    // find the unique id
+    const issueId = await prisma.issues.findUnique({
+      where: { id: parseInt(params.id) },
+    });
 
-//     if (!issueId)
-//       return NextResponse.json({ error: "Invalid issue" }, { status: 404 });
+    if (!issueId)
+      return NextResponse.json({ error: "Invalid issue" }, { status: 404 });
 
-//     await prisma.issue.delete({
-//       where: { id: issueId.id },
-//     });
+    await prisma.issues.delete({
+      where: { id: issueId.id },
+    });
 
-//     return NextResponse.json({}); // Response for a successful deletion
-//   } catch (error) {
-//     console.log(error);
-//     return NextResponse.json({ status: "Fail" }, { status: 500 }); // Error response
-//   }
-// }
+    return NextResponse.json({}); // Response for a successful deletion
+  } catch (error) {
+    console.log(error);
+    return NextResponse.json({ status: "Fail" }, { status: 500 }); // Error response
+  }
+}
