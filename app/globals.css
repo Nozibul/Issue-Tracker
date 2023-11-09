@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  color: rgb(var(--foreground-rgb));
+@layer utilities {
+  .nav-link {
+     @apply text-emerald-500 font-semibold hover:text-emerald-800 transition-colors 
+  }
 }

@@ -1,10 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { Skeleton } from "@/app/components"
+import Image from "next/image";
+import logo from "../public/assets/issue-tracker.jpg";
 import { usePathname } from "next/navigation";
-import { BiSolidBugAlt } from "react-icons/bi";
-import { useSession } from "next-auth/react";
+// import { Skeleton } from "@/app/components"
+// import { useSession } from "next-auth/react";
 import classNames from "classnames";
 import {
   Avatar,
@@ -17,12 +18,12 @@ import {
 
 const NavBar = () => {
   return (
-    <nav className=" border-b mb-5 px-4 py-4 items-center">
+    <nav className=" border-b mb-5 px-4 py-2 items-center">
       <Container>
         <Flex justify="between">
           <Flex align="center" gap="8">
             <Link className="text-3xl text-emerald-700" href="/">
-              <BiSolidBugAlt />
+              <Image src={logo} alt="Logo" width={60} height={60} priority />
             </Link>
             {/* Navbar links */}
             <NavLinks />
@@ -52,7 +53,7 @@ const NavLinks = () => {
           <Link
             className={classNames({
               "!text-emerald-900 font-semibold": link.href === currentPath,
-              "nav-link":true
+              "nav-link": true,
             })}
             href={link.href}
           >

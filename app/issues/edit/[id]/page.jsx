@@ -14,7 +14,7 @@ const IssueForm = dynamic(
 
 const EditIssuePage = async ({ params }) => {
   
-  const issue = await prisma.issue.findUnique({
+  const issue = await prisma.issues.findUnique({
     where: { id: parseInt(params.id) },
   });
 

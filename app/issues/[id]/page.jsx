@@ -10,7 +10,7 @@ import prisma from "@/prisma/client";
 const IssueDetailsPage = async ({ params }) => {
 //   const session = await getServerSession(authOptions);
 
-  const issue = await prisma.issue.findUnique({
+  const issue = await prisma.issues.findUnique({
     where: { id: parseInt(params.id) },
   });
 

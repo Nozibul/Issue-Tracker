@@ -1,4 +1,4 @@
-import { Container, Theme } from "@radix-ui/themes";
+import { Container, Theme, ThemePanel } from "@radix-ui/themes";
 import "@radix-ui/themes/styles.css";
 import { Inter } from "next/font/google";
 import NextTopLoader from "nextjs-toploader";
@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
       <body className={inter.variable}>
         {/* <AuthProvider> */}
           <NextTopLoader color="rgb(5 150 105)" height={3} speed={200} />
-          <Theme accentColor="violet">
+          <Theme accentColor="green">
             <NavBar />
             <main className="p-4">
               <Container>{children}</Container>
